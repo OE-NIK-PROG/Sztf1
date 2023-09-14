@@ -11,11 +11,11 @@
 ## Python
 
 - [namespaces](https://www.geeksforgeeks.org/namespaces-and-scope-in-python/)
-- 
+
 - [special characters](https://chercher.tech/python-programming/python-special-characters)
 
 ## TypeScript
 
 - [namespaces](https://www.typescriptlang.org/docs/handbook/namespaces.html)
-- 
+
 - [special characters](https://www.javatpoint.com/javascript-special-characters)
