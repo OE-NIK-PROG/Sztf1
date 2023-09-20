@@ -1,0 +1,41 @@
+Készítsen olyan programot, amely elsőnek bekéri egy Mortal Kombat karakter nevét, majd azt követően még egyet.
+
+Skorpion beírása esetén, a program kérdezze meg:
+    - a képességét
+    - a ruhája színét
+    - egyik különleges képességét
+    - a erejét (tizedes pontossággal, pl. 4,6667)
+    - a szobahőmérséklet számát, amiben harcolni tud (nem negatív szám esetén, állitsa alapértelmezett 0-ra ezt)
+Sub-zero beírása esetén, a program kérdezze meg:
+    - a képességét
+    - a ruhája színét
+    - egyik különleges képességét
+    - a erejét (tizedes pontossággal, pl. 4,6667)
+    - a szobahőmérséklet számát, amiben harcolni tud (nem negatív szám esetén, állitsa alapértelmezett 0-ra ezt)
+
+2.)
+
+Ha a felhasználó nem Sub-Zero-t és nem Skorpion-t írt be, akkor tudassa a felhasználóval, hogy a program itt véget ért,
+és a program várjon, amíg a felhasználó egy 'x' karaktert nem ír a konzolra, majd entert követően álljon is le a
+program. Amennyiben nem 'x'-et ír, úgy törölje a konzol tartalmát és ismételje meg a folyamatot, amíg szükséges.
+Az egyes karakterekhez (Sub-Zero, Skorpion) tartozó bekért adatokat az adatokhoz megfelelő(!) típusú változóban
+tárolja el.
+3.)
+
+Ezt követően, vizsgálja meg, hogy Skorpion vagy Sub-Zero rendelkezik nagyobb erővel!
+Ha Skorpion rendelkezik többel, akkor írja ki a konzolra, hogy "Skorpion > Sub-Zero".
+llenkező esetben folytassa a programot és folytassa az összhasonlítást a szobahőmérsékleti paraméterek alapján
+majd formázott alakban irassa ki a képernyőre a karakterek alapadatait ugy, hogy
+használjon benne tabulátort és sortorést! A program végén írja ki annak a karakternek a nevét, aki melegebb éghajlaton
+jobban tud alkalmazkodni.
+Ha Skorpion rendelkezik magasabb/nagyobb értékkel, akkor egy logikai változót amely "skorpionAJobb" nevet
+viseli, állítson igaz értékre.
+Ellenkező esetben hamis értéket kapjon a változó.
+
+4.)
+A program a vizsgálatok után írja ki a konzolra a "skorpionAJobb" logikai változó értékét, magyarul (igaz vagy
+hamis).
+Megjegyzés: konzolról bekérve lebegőpontos számot, tizedesvesszővel kell megadni, kódba beleégetve pedig
+tizedespontot használunk.
+    - konzolról: 3,1415
+    - kódból: double x = 3.1415;
