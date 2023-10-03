@@ -1,0 +1,22 @@
+Feladat egy regisztrációs űrlap elkészítése kondi bérlethez.
+
+Kérje be a felhasználótól az alábbi adatokat:
+(FONTOS!!!! Üres mezőkkel a program ne tudjon tovább dolgozni, szóval addig ismételje egyesével a kérdéseket, amíg minden mező ki nincs töltve!)
+
+⁃	Név (szöveggént tárolja)
+⁃	Születési év (egész számként tárolja)
+⁃	Tömege (tizedes számként adja meg)
+⁃	Ha korábban már edzett, akkor egész számként, hogy mennyivel nyomott fekve, ha nem edzett akkor a felhasználónak tüntessük fel, hogy 0-át kell beírni. (Egész számként tárolja)
+⁃	Hány évig tervez edzeni (egész számként tárolja)
+⁃	Magasságát (tizedes számként adja meg)
+
+Számolja ki, hogy hány éves a felhasználó! (Aktuális év - Születési év)
+Számolja ki, hogy mennyi a felhasználó testtömeg indexe! (Testtömeg / Magassággal)
+Számolja ki, hogy ha több mint egy évet jár edzeni, akkor hány százalékkal fog tudni havi szinten a súlyon emelni fekve nyomásnál. ((su]y / (év * 12)) * 100)
+
+Formázottan jelenítse meg a képernyőn az adatokat! (Használjon formázott kiíratást pl.: tabulátort)
+
+
+2. Toltson fel egy 100 elemu tombot veletlen szamokkal
+3. Valogassa ki ket kulon tombbe a paros es paratlan szamokat
+4. Toroljon minden olyan ketjegyu szamot a ket tombbol, ami 1-el kezdodik
