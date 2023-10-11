@@ -1,0 +1,59 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace String_gyakfeladat
+{
+    class Program
+    {
+
+        static void Main(string[] args)
+        {
+
+
+             // 0. Írjon programot, amely előállít egy véletlen Neptun kódot!
+             // A Neptun kódok 6 karakterből állnak. Minden karakter az angol ABC nagybetűje, illetve 0 és 9 közötti számjegy lehet.
+            
+            string nk = NeptunGeneral();
+            Console.WriteLine(nk);
+
+
+            // 1. Írjon programot, amely egy szöveges változóban megszámolja a betűket!
+
+            int szam = BetuSzamlal(nk);
+            Console.WriteLine("{0}-ben {1} db betű van.", nk, szam);
+
+
+            // 2. Írjon programot, amely egy szövegből eltűnteti a szóközöket.
+
+            string spacekNelkul = SpaceTorol("A szegedi egyetemen különleges méltányosságot kapott a hivatalvezető lánya.");
+            Console.WriteLine(spacekNelkul);
+
+
+            // 3. Írjon programot, amely egy szövegről megmondja, hogy palindrom-e.
+            // Megjegyzés: ezt rekurzív programozási tétellel volna optimális megvalósítani.
+            
+            // space-k bezavarhatnak, ezért töröljük előtte őket
+            bool elsoEset = PalindromE(SpaceTorol("indul a görög aludni"));
+            bool masodikEset = PalindromE(SpaceTorol("alma")); // de meghívható metóduson belülről is a SpaceTorol
+            Console.WriteLine(elsoEset);
+            Console.WriteLine(masodikEset);
+
+            // 4. Írjon programot, amely egy mátrixot feltölt véletlenszerűen
+            //      [0-9] számokkal és karakterekkel (A..Z).
+            // Reprezentálja a mátrixot a konzolon.
+            // Ezt követően, vizsgálja meg, hogy soronként hány szám található a mátrixban.
+            // Ezt követően, vizsgálja meg, hogy oszloponként hány betű található a mátrixban.
+            char[,] matrix = new char[6,5];
+            MatrixGeneral(matrix);
+            MatrixKiir(matrix);
+
+            int[] szamDb = MatrixSorbanSzam(matrix);
+
+            Console.WriteLine("\n\n");
+
+        }
+    }
+}
