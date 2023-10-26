@@ -1,0 +1,202 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Mozi
+{
+    internal class Program
+    {
+        static Random rnd = new Random();
+
+        // ----------------------------------
+        static int[,] NezoterGen()
+        {
+            int[,] nezoter = new int[10,9];
+
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    nezoter[i, j] = rnd.Next(17, 41);
+                    // IDE Console.Write
+                    // KULON FV
+                }
+            }
+
+            return nezoter;
+        }
+        static void Megjelenit(int[,] nezoter)
+        {
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    // ELSO MEGOLDAS
+                    if (nezoter[i, j] < 18)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(nezoter[i, j] + " ");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        Console.Write(nezoter[i, j] + " ");
+                    }
+
+                    // MASODIK MEGOLDAS
+                    //if (nezoter[i, j] < 18)
+                    //    Console.ForegroundColor = ConsoleColor.Red;
+                    //else
+                    //    Console.ForegroundColor = ConsoleColor.Gray;
+
+
+                    //Console.Write(nezoter[i, j] + " ");
+                    //Console.ResetColor();
+
+
+                }
+                Console.WriteLine();
+            }
+        }
+        static double AtlagKor(int[,] nezoter)
+        {
+            // SOROZAT SZÁMÍTÁS ÉS MEGSZÁMLÁLÁS TÉTELE
+            double sum = 0;
+            int db = 0;
+
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    sum += nezoter[i, j];
+                    db++;
+                }  
+            }
+
+            double avg = sum / (double)db;
+
+            //return avg;
+            return sum / db;
+            //return sum / (nezoter.GetLength(0) * nezoter.GetLength(1));
+        }
+
+        static int Kiskoruak(int[,] nezoter)
+        {
+            // MEGSZÁMLÁLÁS TÉTELE
+            int db = 0;
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    if (nezoter[i, j] < 18)
+                        db++;
+                }
+            }
+            return db;
+        }
+        static bool FiatalabbE(int[,] nezoter, int sor, int oszlop)
+        {
+            int sum = 0;
+            /*
+            bool tempLog = false;
+
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    if ((sor < nezoter.GetLength(0) && sor > 0) &&
+                        (oszlop < nezoter.GetLength(1) && oszlop > 0))
+                    {
+                        if (sor == i && oszlop == j)
+                        {
+                            sum += nezoter[i + 1, j];
+                            sum += nezoter[i - 1, j];
+                            sum += nezoter[i, j + 1];
+                            sum += nezoter[i, j - 1];
+
+                            if ((double)(sum / 4) > nezoter[i, j])
+                            {
+                                tempLog = true;
+                            }
+                        } 
+                    }
+                }
+            }
+            */
+
+            // ROVIDEBB
+            sum += nezoter[sor + 1, oszlop];
+            sum += nezoter[sor - 1, oszlop];
+            sum += nezoter[sor, oszlop + 1];
+            sum += nezoter[sor, oszlop - 1];
+
+            if (((double)(sum / 4)) > nezoter[sor, oszlop])
+                return true;
+            else
+                return false;
+
+            // return tempLog; // HOSSZABB VERZIOHOZ KELL
+            // return ((sum / 4) > nezoter[sor, oszlop])
+        }
+
+        static double[] SorokAtlaga(int[,] nezoter)
+        {
+            double[] avgRow = new double[nezoter.GetLength(0)];
+            int db = 0, sum = 0;
+
+
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    sum += nezoter[i, j];
+                    db++;
+                }
+                avgRow[i] = (double)sum / (double)db;
+            }
+
+            return avgRow;
+        }
+        // ----------------------------------
+        static void Main(string[] args)
+        {
+            // TESZTELES
+            // 1. Feladat
+            int[,] nezoter = NezoterGen();
+            // IDE FOR CIKLUS
+            ;
+
+            // 2. Feladat
+            Megjelenit(nezoter);
+
+            // 3. Feladat
+            Console.WriteLine($"\nA nézőtér átlag életkora : {AtlagKor(nezoter)}");
+
+            // 4. Feladat
+            Console.WriteLine($"\nA nézőtéren {Kiskoruak(nezoter)} db kiskoru van");
+
+            // 5. Feladat
+            Console.WriteLine("Add meg a sor esz oszlopszamot ilyen formatumban: sor#oszlop");
+
+            string tmp = Console.ReadLine();
+            int index = tmp.IndexOf("#");
+            int sor = int.Parse(tmp.Substring(0, index));
+            int oszlop = int.Parse(tmp.Substring(index+1, tmp.Length -index -1));
+            Console.WriteLine(sor + " " + oszlop);
+            Console.WriteLine($"Vizgalt nezo : {FiatalabbE(nezoter, sor, oszlop)}");
+
+            //Console.WriteLine("Add meg a sor esz oszlopszamot ilyen formatumban: sor#oszlop");
+            //string tmp2 = Console.ReadLine();
+            //Console.WriteLine($"Vizgalt nezo : {FiatalabbE(nezoter, int.Parse(tmp2.Split('#')[0]),int.Parse(tmp2.Split('#')[1]))}");
+
+            //Console.WriteLine($"\nAz aktuális néző fiatalabb? >> {FiatalabbE(nezoter)}");
+
+            // 6. Feladat
+            Console.WriteLine($"\nA nézőtéren {Kiskoruak(nezoter)} db kiskoru van");
+
+            Console.ReadLine();
+        }
+    }
+}
