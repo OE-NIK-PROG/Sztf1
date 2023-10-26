@@ -81,7 +81,6 @@ namespace Mozi
             return sum / db;
             //return sum / (nezoter.GetLength(0) * nezoter.GetLength(1));
         }
-
         static int Kiskoruak(int[,] nezoter)
         {
             // MEGSZÁMLÁLÁS TÉTELE
@@ -140,7 +139,6 @@ namespace Mozi
             // return tempLog; // HOSSZABB VERZIOHOZ KELL
             // return ((sum / 4) > nezoter[sor, oszlop])
         }
-
         static double[] SorokAtlaga(int[,] nezoter)
         {
             double[] avgRow = new double[nezoter.GetLength(0)];
@@ -158,6 +156,47 @@ namespace Mozi
             }
 
             return avgRow;
+        }
+        static string[] KiskoruakHelyei(int[,] nezoter)
+        {
+            string[] kisTomb = new string[Kiskoruak(nezoter)];
+            int db = 0;
+
+            for (int i = 0; i < nezoter.GetLength(0); i++)
+            {
+                for (int j = 0; j < nezoter.GetLength(1); j++)
+                {
+                    if (nezoter[i,j] < 18)
+                    {
+                        kisTomb[db++ /* vagy db*/] = $"sor: {i}, oszlop: {j}";
+                        // db++
+                    }
+                }
+            }
+
+            return kisTomb;
+        }
+        static void Csokkeno(ref double[] atlagok)
+        {
+            int i = atlagok.Length;
+            int idx;
+
+            while (i >= 2)
+            {
+                idx = 0;
+                for (int j = 1; j < i - 1; j++)
+                {
+                    if (atlagok[j] < atlagok[j+1])
+                    {
+                        double temp = atlagok[j];
+                        atlagok[j] = atlagok[j + 1];
+                        atlagok[j + 1] = temp;
+
+                        idx = j;
+                    }
+                }
+                i = idx;
+            }
         }
         // ----------------------------------
         static void Main(string[] args)
@@ -195,6 +234,28 @@ namespace Mozi
 
             // 6. Feladat
             Console.WriteLine($"\nA nézőtéren {Kiskoruak(nezoter)} db kiskoru van");
+
+            double[] atlagok = SorokAtlaga(nezoter);
+            // 7. Feladat
+
+            foreach (var item in KiskoruakHelyei(nezoter))
+            {
+                Console.WriteLine(item);
+            }
+
+            //string[] kiskor = KiskoruakHelyei(nezoter);
+            //for (int i = 0; i < kiskor.Length; i++)
+            //{
+            //    Console.Write(kiskor[i] + " ");
+            //}
+
+            // 8. Feladat
+            Csokkeno(ref atlagok);
+
+            Console.WriteLine("JAV BUBI");
+            Console.WriteLine(new string('-',20));
+            for (int i = 0; i < atlagok.Length; i++)
+                Console.WriteLine(atlagok[i]);
 
             Console.ReadLine();
         }
