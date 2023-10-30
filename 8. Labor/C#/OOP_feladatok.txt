@@ -1,0 +1,84 @@
+1. FELADAT
+
+Hozzon letre egy Warrior osztalyt az alabbi tulajdonsagokkal:
+
+ - HP
+ - STRENGTH (physical power)
+ - DEXTERITY (speed)
+ - INTELLIGENCE (learning capabilities and magical power)
+ - CHARISMA (leadership)
+ - CONSTITUTION (physique and endurance of a character)
+ - LOCATION
+
+2. FELADAT
+
+Hozzon letre egy Archer osztalyt az alabbi tulajdonsagokkal:
+
+ - HP
+ - STRENGTH (physical power)
+ - DEXTERITY (speed)
+ - INTELLIGENCE (learning capabilities and magical power)
+ - CHARISMA (leadership)
+ - CONSTITUTION (physique and endurance of a character)
+ - RANGE DAMAGE (LONG DISTANCE ATTACK)
+ - LOCATION
+
+3. FELADAT
+
+Hozzon letre egy Mage osztalyt az alabbi tulajdonsagokkal:
+
+ - HP
+ - STRENGTH (physical power)
+ - DEXTERITY (speed)
+ - INTELLIGENCE (learning capabilities and magical power)
+ - CHARISMA (leadership)
+ - CONSTITUTION (physique and endurance of a character)
+ - MANA (MAGE COST)
+ - LOCATION
+
+4. FELADAT
+
+Hozzon letre egy NPC osztalyt az alabbi tulajdonsagokkal:
+
+ - HP
+ - STRENGTH (physical power)
+ - LOCATION
+
+5. FELADAT
+
+Hozzon letre egy GameWorld osztalyt az alabbi tulajdonsagokkal:
+
+ PLAYERS_W: (Array)
+ PLAYERS_A: (Array)
+ PLAYERS_M: (Array)
+ GAMEBOARD: (2D Array)
+
+6. FELADAT
+
+Toltse fel a GAMEBOARD-ot kulonbozo karakterekkel. Veletlenszeruen
+szoraj szet oket a jatekteruleten. Ahol nincs karakter ott egy '-'
+jelenjen meg, ahol van karakter ott meg egy 'O' karakter szerepeljen
+kasztnak megfelelo szinevel.
+
+7. FELADAT
+
+Inditson tamadasokat.
+
+8. FELADAT
+
+Jelenitse meg a kijelzon az informaciokat.
+
+9. FELADAT
+
+Keresse meg a legerosebb jatekost.
+
+10. FELADAT
+
+Ha egy jatekosnak elfogyott az elete, akkor kiesett a jatekbol a 
+szereplo es vegye le a jatekteruletrol.
+
+11. FELADAT
+
+Addig menjen a jatek, amig 1 jatekos marad talpon.
+
+A feladat megoldasa soran hasznalj Threed.Sleep() metodust.
