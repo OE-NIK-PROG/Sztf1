@@ -56,6 +56,10 @@ namespace OOP
             Console.WriteLine("AFTER DAMAGE");
             Console.WriteLine(p1.HP);
 
+            Console.WriteLine("NEW WEAPON with default value:");
+            Weapon w_default = new Weapon();
+            Console.WriteLine($"Default skin: {w_default.Skin}");
+
 
             Console.ReadLine();
         }
