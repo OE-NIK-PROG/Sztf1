@@ -1,0 +1,13 @@
+using System;
+
+namespace OOP
+{
+    public enum Skins
+    {
+        FOREST  = 0,
+        NAVY    = 1,
+        POLICE  = 2,
+        GOLD    = 3,
+        DEFAULT = 4
+    }
+}
