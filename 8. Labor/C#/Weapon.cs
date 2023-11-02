@@ -16,14 +16,13 @@ namespace OOP
 
         // CONSTRUCTOR 
         // ctor + tab + tab
-        public Weapon() { }
+        public Weapon(): this(30, Skins.DEFAULT) { } // EMPTY CONSTRUCTOR with default value
 
-        public Weapon(int ammo = 30, Skins skin = Skins.DEFAULT)
+        public Weapon(int ammo, Skins skin)
+            
         {
             this.ammo = ammo;
             this.skin = skin;
         }
-
-
     }
 }
