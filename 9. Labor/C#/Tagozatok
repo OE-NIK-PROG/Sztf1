@@ -1,0 +1,11 @@
+using System;
+
+namespace Neptun.enums
+{
+    public enum Tagozatok
+    {
+        Nappali,
+        Esti,
+        Levelezo
+    }
+}
