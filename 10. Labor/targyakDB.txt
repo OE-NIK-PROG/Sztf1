@@ -1,0 +1,6 @@
+Analízis I.|5|1|2016.09.20. 12:00:00
+Diszkrét matematika I.|5|1|2016.11.12. 13:00:00
+Bevezetés az informatikába|4|0|2016.10.23. 08:30:00
+Villamosságtan|5|1|2016.10.23. 08:00:00
+Makroökonómia|6|0|2016.12.06. 08:00:00
+SzTF I.|6|1|2016.12.06. 08:30:00
