@@ -1,0 +1,5 @@
+Anna;25;Kedves
+Bela;30;Lenyugozo
+Krisztina;20;Morcos
+Gabor;22;Lassu
+Eva;28;Kedves

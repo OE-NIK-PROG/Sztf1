@@ -1,0 +1,5 @@
+Név: Anna, Stílus: Kedves, Gyűjtött Borravaló: 0
+Név: Bela, Stílus: Lenyugozo, Gyűjtött Borravaló: 0
+Név: Krisztina, Stílus: Morcos, Gyűjtött Borravaló: 400
+Név: Gabor, Stílus: Lassu, Gyűjtött Borravaló: 0
+Név: Eva, Stílus: Kedves, Gyűjtött Borravaló: 0
